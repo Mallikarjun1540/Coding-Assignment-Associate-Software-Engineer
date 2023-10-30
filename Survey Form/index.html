@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <br><br>
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+    <div class="col-md-4" style="border: 1px solid #ccc; display: inline-block; padding: 10px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);">
+
+    
+    <form id="surveyForm" onsubmit="showAlert(event)">
+        <h2 style="text-align: center;">Survey Form</h2>
+        <hr>
+        <div class="mb-3">
+            <label for="name" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="name" required>
+           
+          </div>
+          <div class="mb-3">
+            <label for="lname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lname" required>
+           
+          </div>
+          <div class="mb-3">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" class="form-control" id="dob" required>
+        </div>
+        <div class="mb-3">
+            <label for="country">Country:</label>
+            <select class="form-control" id="country" required>
+                <option selected>Select your Country</option>
+                <option value="1">India</option>
+                <option value="2">USA</option>
+                <option value="3">Canada</option>
+                <option value="4">Srilanka</option>
+                <option value="5">Uganda</option>
+            </select>
+        </div>
+        <div class="mb-3">
+        <label for="">Gender:</label>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Male
+            </label>
+          &nbsp;&nbsp; &nbsp;&nbsp;
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+            <label class="form-check-label" for="flexCheckChecked">
+              Female
+            </label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+          
+        </div>
+        <div class="mb-3">
+            <label for="profession" class="form-label">Profession:</label>
+            <input type="text" class="form-control" id="profession" required>
+           
+          </div>
+
+          <div class="mb-3">
+            <label for="number" class="form-label">Mobile Number:</label>
+            <input type="tel" class="form-control" id="number" pattern="[0-9]{10}" required>
+           
+          </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
+      </form>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+    </div>
+    <br>
+</body>
+
+<script>
+    function resetForm() {
+        var form = document.getElementById("surveyForm");
+        form.reset();
+    }
+    
+    function showAlert(event) {
+        event.preventDefault();
+        var alertMessage = "Form submitted successfully!";
+        alert(alertMessage);
+    }
+</script>
+</html>
